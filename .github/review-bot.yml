@@ -1,33 +1,30 @@
 global:
-  language: "English"
+  language: 'English'
   preventReviewForNewCommits: false
-  level: "MAJOR"
+  level: 'MAJOR'
   exclude:
-    - "**/dist/**"
-    - "**/vendor/**"
-    - "**/coverage/**"
+    - '**/dist/**'
+    - '**/vendor/**'
+    - '**/coverage/**'
   collapseComment: true
   resolveOutdatedComments: true
   skipSummary: true
-   
+
 reviews:
-  - name: "Frontend Development"
+  - name: 'only ts'
     path:
-      - "src/frontend/**/*.{ts,tsx,js,jsx,css,scss}"
-    labels:
-        - "label1"
-        - "label2"
+      - 'src/frontend/**/*.{ts,tsx}'
     settings: # 전역 설정 오버라이딩
-      level: "SUGGESTION"
-      language: "Korean"
+      level: 'SUGGESTION'
+      language: 'Korean'
       exclude:
-        - "**/*.min.js"
-        - "**/*.test.{js,ts,py}"
-        - "**/node_modules/**"
-   
-  - name: "Backend Development"
+        - '**/*.min.js'
+        - '**/*.test.{js,ts,py}'
+        - '**/node_modules/**'
+
+  - name: 'be'
     path:
-      - "src/backend/**/*.{py,go,java}"
+      - 'src/backend/**/*.{py,go,java}'
     settings: # 전역 설정 오버라이딩
-      level: "CRITICAL"
+      level: 'CRITICAL'
       preventReviewForNewCommits: true
