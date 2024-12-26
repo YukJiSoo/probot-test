@@ -1,9 +1,33 @@
-filterReviewLevel: 'SUGGESTION'
-reviewFileExtensions:
-  - .py
-  - .ts
-  - .js
-  - .tsx
-  - .jsx
-language: 'English'
-preventReviewForNewCommits: false
+global:
+  language: "English"
+  preventReviewForNewCommits: false
+  level: "MAJOR"
+  exclude:
+    - "**/dist/**"
+    - "**/vendor/**"
+    - "**/coverage/**"
+  collapseComment: true
+  resolveOutdatedComments: true
+  skipSummary: true
+   
+reviews:
+  - name: "Frontend Development"
+    path:
+      - "src/frontend/**/*.{ts,tsx,js,jsx,css,scss}"
+    labels:
+        - "label1"
+        - "label2"
+    settings: # 전역 설정 오버라이딩
+      level: "SUGGESTION"
+      language: "Korean"
+      exclude:
+        - "**/*.min.js"
+        - "**/*.test.{js,ts,py}"
+        - "**/node_modules/**"
+   
+  - name: "Backend Development"
+    path:
+      - "src/backend/**/*.{py,go,java}"
+    settings: # 전역 설정 오버라이딩
+      level: "CRITICAL"
+      preventReviewForNewCommits: true
