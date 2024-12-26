@@ -1,0 +1,9 @@
+filterReviewLevel: 'SUGGESTION'
+reviewFileExtensions:
+  - .py
+  - .ts
+  - .js
+  - .tsx
+  - .jsx
+language: 'English'
+preventReviewForNewCommits: false
