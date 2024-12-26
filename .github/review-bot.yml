@@ -21,10 +21,12 @@ reviews:
         - '**/*.min.js'
         - '**/*.test.{js,ts,py}'
         - '**/node_modules/**'
+        - '**/excludeFiles/**'
 
   - name: 'be'
     path:
       - 'src/backend/**/*.{py,go,java}'
+      - 'src/backend/**/*.{js}'
     settings: # 전역 설정 오버라이딩
       level: 'CRITICAL'
       preventReviewForNewCommits: true
